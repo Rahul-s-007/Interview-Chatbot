@@ -1,4 +1,8 @@
 import streamlit as st
+
+st.set_page_config(page_icon=":computer:", layout = "wide")
+st.write("<div style='text-align: center'><h1><em style='text-align: center; color:#00FFFF;'>Interview Practice</em></h1></div>", unsafe_allow_html=True)
+#----------------------------------------------------------------#
 from streamlit_chat import message
 from streamlit import session_state
 
@@ -21,9 +25,8 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 openai.api_key = OPENAI_API_KEY # for open ai
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY # for lang chain
-#----------------------------------------------------------------#
-st.set_page_config(page_icon=":computer:", layout = "wide")
-st.write("<div style='text-align: center'><h1><em style='text-align: center; color:#00FFFF;'>Interview Practice</em></h1></div>", unsafe_allow_html=True)
+
+# @cache load model
 #----------------------------------------------------------------#
 def chat():
     pass
