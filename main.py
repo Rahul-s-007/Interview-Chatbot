@@ -28,44 +28,58 @@ st.write("<div style='text-align: center'><h1><em style='text-align: center; col
 def chat():
     pass
 
+#----------------------------------------------------------------#
 def chat_software_developer():
     pass
 
+#----------------------------------------------------------------#
 def chat_sales_representative():
     pass
 
+#----------------------------------------------------------------#
 def chat_marketing_manager():
     pass
 
+#----------------------------------------------------------------#
 def chat_data_scientist():
     pass
 
+#----------------------------------------------------------------#
 def chat_human_resources_manager():
     pass
 
+#----------------------------------------------------------------#
 def chat_project_manager():
     pass
 
+#----------------------------------------------------------------#
 def chat_financial_analyst():
     pass
 
+#----------------------------------------------------------------#
 def chat_customer_service_representative():
     pass
 
+#----------------------------------------------------------------#
 def chat_graphic_designer():
     pass
 
+#----------------------------------------------------------------#
 def chat_healthcare_administrator():
     pass
 
+#----------------------------------------------------------------#
 def chat_lawyer():
     pass
 
+#----------------------------------------------------------------#
 def chat_teacher():
     pass
 
+#----------------------------------------------------------------#
 def chat_web_developer():
     pass
+
 #----------------------------------------------------------------#
 job_roles = ["Software Developer",
              "Sales Representative",
