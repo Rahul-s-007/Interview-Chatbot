@@ -1,0 +1,66 @@
+What is your name?
+Enter your answer:Hi, my name is Rahul
+
+
+1. Ask next question
+2. Exit
+Enter your choice: 1
+ What do you think are the key skills required for a customer service representative?
+Enter your answer: you need good communication an people skills
+
+
+1. Ask next question
+2. Exit
+Enter your choice: 1
+ How do you ensure that you are meeting the needs of customers from diverse backgrounds?
+Enter your answer: i make sure i dont discriminate against anyone and hear everyone out
+
+
+1. Ask next question
+2. Exit
+Enter your choice: 1
+ How do you ensure that you are respectful of customers from diverse backgrounds?
+Enter your answer: i dont make assumptions or use streotypes
+
+
+1. Ask next question
+2. Exit
+Enter your choice: 2
+Below given are the questions asked by you and the answers given by the user:
+Question:What is your name?
+Answer:Hi, my name is Rahul
+
+Question: What do you think are the key skills required for a customer service representative?
+Answer:you need good communication an people skills
+
+Question: How do you ensure that you are meeting the needs of customers from diverse backgrounds?
+Answer:i make sure i dont discriminate against anyone and hear everyone out
+
+Question: How do you ensure that you are respectful of customers from diverse backgrounds?
+Answer:i dont make assumptions or use streotypes
+
+Now for each question and answer pair,give a score to on a scale of 1 to 10 for each of them based on how good the answer was and then also give suggestions on how to improve each of their answers. 
+
+
+Your report is:
+
+
+Question: What is your name?
+Answer: Hi, my name is Rahul
+Score: 8/10
+Suggestion: No suggestion needed.
+
+Question: What do you think are the key skills required for a customer service representative?
+Answer: You need good communication an people skills
+Score: 6/10
+Suggestion: You should mention specific skills such as excellent communication skills, being a good listener, having patience, and being able to multitask effectively.
+
+Question: How do you ensure that you are meeting the needs of customers from diverse backgrounds?
+Answer: I make sure I don't discriminate against anyone and hear everyone out.
+Score: 7/10
+Suggestion: You should also mention that you make an effort to learn about different cultures and to understand their unique needs.
+
+Question: How do you ensure that you are respectful of customers from diverse backgrounds?
+Answer: I don't make assumptions or use stereotypes.
+Score: 8/10
+Suggestion: No suggestion needed.
