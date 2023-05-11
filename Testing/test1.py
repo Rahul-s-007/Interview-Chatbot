@@ -78,7 +78,7 @@ while(option != 2):
         prev_ans = prev_template + "\n" + answer
         question_answer_pair.append([question, answer])
     if option == 2:
-        report = "Below given ae the questions asked by you and the answers given by the user:"
+        report = "Below given are the questions asked by you and the answers given by the user:"
         for i in range(len(question_answer_pair)):
             report += f"\nQuestion:{question_answer_pair[i][0]}\nAnswer:{question_answer_pair[i][1]}\n"
             print(report)

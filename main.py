@@ -6,7 +6,15 @@ st.write("<div style='text-align: center'><h1><em style='text-align: center; col
 from streamlit_chat import message
 from streamlit import session_state
 
-st.session_state["messages"] = []
+# st.session_state["messages"] = []
+# st.session_state["messages"].append(message("Hello, I am your interviewer. What is your name?", "bot"))
+if "generated" not in st.session_state:
+    st.session_state["generated"] = []
+if "past" not in st.session_state:
+    st.session_state["past"] = []
+if "input" not in st.session_state:
+    st.session_state["input"] = ""
+
 #----------------------------------------------------------------#
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
@@ -28,12 +36,37 @@ os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY # for lang chain
 
 # @cache load model
 #----------------------------------------------------------------#
+def get_text():
+
+    input_text = st.text_input("You: ", st.session_state["input"], key="input",
+                            placeholder="Enter your response here...", 
+                            label_visibility='hidden')
+    return input_text
+
 def chat():
-    pass
+    # input_text = st.text_input("You:", key="input_text")
+    # if input_text:
+    #     st.session_state["messages"].append(message(input_text, "user"))
+    #     st.session_state["messages"].append(message("ans", "bot"))
+    convo_col,temp = st.columns([1,10])
+
+    user_input = get_text()
+
+    if user_input:
+        output = "ans"  
+        st.session_state.past.append(user_input)
+        st.session_state.generated.append(output)
+
+    with temp:
+        with st.expander("Conversation", expanded=True):
+            if len(st.session_state["generated"]) !=0 and len(st.session_state["past"]) !=0:
+                for i in range(0,len(st.session_state['generated'])):
+                    st.success("Hope: "+st.session_state["generated"][i])  # icon="🤖"
+                    st.info("User: "+st.session_state["past"][i])
 
 #----------------------------------------------------------------#
 def chat_software_developer():
-    pass
+    chat()
 
 #----------------------------------------------------------------#
 def chat_sales_representative():
