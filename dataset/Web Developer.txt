@@ -61,7 +61,3 @@ Web Developer: I believe that creativity and functionality go hand in hand in we
 Interviewer: Finally, can you tell me about your long-term career goals as a web developer?
 
 Web Developer: My long-term career goals include continuing to learn and grow as a developer, staying up to date with the latest trends and technologies, and eventually moving into a leadership role where I can mentor and guide other developers.
-
-
-
-
