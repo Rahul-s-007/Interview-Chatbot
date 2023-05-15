@@ -2,6 +2,8 @@ import streamlit as st
 from streamlit_chat import message
 from streamlit import session_state
 
+st.set_page_config(page_icon=":computer:", layout = "centered") # layout = "wide"
+st.write("<div style='text-align: center'><h1><em style='text-align: center; color:#00FFFF;'>Interview Practice</em></h1></div>", unsafe_allow_html=True)
 # ------------------------------------------------------------------------------------
 import openai
 import pinecone
@@ -62,8 +64,6 @@ if "question" not in st.session_state:
     st.session_state["question"] = ""
 
 #----------------------------------------------------------
-# if "generated" not in st.session_state:
-#     st.session_state["generated"] = []
 if "past" not in st.session_state:
     st.session_state["past"] = []
 if "input" not in st.session_state:
@@ -174,7 +174,7 @@ job_roles = ["Customer Service Representative"]
 def main():
     st.sidebar.write("Choose a role to be interviewed for:")
     options = st.sidebar.radio("Select Role",job_roles,label_visibility="collapsed")
-
+    
     if options == "Customer Service Representative":
         chat_customer_service_representative()
 
@@ -184,11 +184,11 @@ def main():
         st.session_state["question_answer_pair"] = [] 
         st.session_state["suggestions"] = []
         st.session_state["prev_ans"] = ""
-
-        st.session_state["generated"] = []
+        st.session_state["question"] = ""
         st.session_state["past"] = []
         st.session_state.userans = ''
-
+        
+    st.sidebar.success("Press 'New Question' to start the interview.")
 #----------------------------------------------------------------#
 if __name__ == "__main__":
     main()
