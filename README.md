@@ -1,4 +1,4 @@
-# Interview-Chatbot 
+# Interview-Chatbot
 ## Website: [Interview Chatbot](https://interview-chatbot.streamlit.app/)
 ## Revolutionizing the way we interview: AI-powered chatbot for efficient and engaging interviews
 
@@ -25,7 +25,7 @@
 
 - [text-davinci-003](https://platform.openai.com/docs/models/gpt-3-5)
 
-# Getting Started
+# Getting Started:
 After cloning the repository to local machine.
 To run the project locally, run the following CLI commands.
 ```
