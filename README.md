@@ -12,6 +12,7 @@
 
 - Overall, the AI Interview Chatbot is a project that has the potential to revolutionize the way job interviews are conducted. It will provide a more efficient, scalable, and objective way of conducting interviews, and it will enable recruiters to focus their time and effort on more strategic tasks.
 
+Website: [Interview Chatbot](https://interview-chatbot.streamlit.app/)
 ![](doc_imgs/main_page_ss.png)
 
 # Tools:
