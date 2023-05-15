@@ -12,7 +12,7 @@
 
 - Overall, the AI Interview Chatbot is a project that has the potential to revolutionize the way job interviews are conducted. It will provide a more efficient, scalable, and objective way of conducting interviews, and it will enable recruiters to focus their time and effort on more strategic tasks.
 
-![Demo]("interview_img.jpg")
+![](doc_imgs/main_page.png)
 
 # Tools:
 
@@ -22,12 +22,12 @@
 - Python
 - Streamlit
 
-# Models:
+# Large Language Model (LLM):
 
 - text-davinci-003
 
 # Getting Started
-
+After cloning the repository to local machine.
 To run the project locally, run the following CLI commands.
 ```
 pip install -r requirements.txt ## Install all the dependencies
