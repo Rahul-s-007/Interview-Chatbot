@@ -1,5 +1,3 @@
 # streamlit
 # mstreamlit messages
 # langchaain
-# python-magic==0.4.27
-# nltk

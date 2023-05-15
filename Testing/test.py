@@ -27,7 +27,7 @@ from langchain.chains import RetrievalQA
 from langchain import OpenAI
 
 #defining LLM
-llm = OpenAI(temperature=0,max_tokens=4096)
+llm = OpenAI(temperature=0) #,max_tokens=4096
 
 # qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=docsearch.as_retriever(search_kwargs={"k": 2}))
 qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=docsearch.as_retriever())
@@ -35,6 +35,17 @@ qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=docsearc
 asked_questions = """Below are already asked questions, dont use them again:"""
 prev_template = """Answer given by user for the above question is:"""
 question_answer_pair = []
+suggestions = []
+
+def get_suggestions(qa_pair):
+    report = "Below given is the question asked by you and the answer given by the user:\n"
+    report += f"Question:{qa_pair[0]}\nAnswer:{qa_pair[1]}\n"
+    report += "Now for the above qiven question and answer, give a score for the answer on a scale of 1 to 10. Also give suggestions on how to improve the user's answer."
+    
+    result_2 = qa({"query": report})
+    suggestion_txt = result_2['result']
+    
+    return suggestion_txt
 
 first_question = "What is your name?"
 print(first_question)
@@ -43,6 +54,7 @@ first_ans = str(input("Enter your answer:"))
 asked_questions += "\n" + first_question
 prev_ans = prev_template + "\n" + first_ans
 question_answer_pair.append([first_question, first_ans])
+suggestions.append(get_suggestions(question_answer_pair[-1]))
 
 option = 0
 while(option != 2):
@@ -63,19 +75,25 @@ Also if user does not know the answer of a certain question move on to next ques
         asked_questions += "\n" + question
         prev_ans = prev_template + "\n" + answer
         question_answer_pair.append([question, answer])
-        
-    if option == 2:
-        report = "Below given are the questions asked by you and the answers given by the user:"
-        
-        for i in question_answer_pair:
-            report += f"\nQuestion:{i[0]}\nAnswer:{i[1]}\n"
+        suggestions.append(get_suggestions(question_answer_pair[-1]))
 
-        report += "\nNow for each question and answer pair,give a score to on a scale of 1 to 10 for each of them based on how good the answer was and then also give suggestions on how to improve each of their answers."
-        print(report)
+    if option == 2:
+        print("Report:")
+        for i in range(len(suggestions)):
+            print(f"Q.{i+1} {question_answer_pair[i][0]}\nAns: {question_answer_pair[i][1]}\nSuggestion:{suggestions[i]}\n")
         
-        result_2 = qa({"query": report})
-        suggestions_report = result_2['result']
-        print("\n")
-        print(f"Your report is:\n{suggestions_report}")
-        print("\n")
+        # report = "Below given are the questions asked by you and the answers given by the user:"
+        
+        # for i in question_answer_pair:
+        #     report += f"\nQuestion:{i[0]}\nAnswer:{i[1]}\n"
+
+        # report += "\nNow for each question and answer pair,give a score to on a scale of 1 to 10 for each of them based on how good the answer was and then also give suggestions on how to improve each of their answers."
+        # print(report)
+        
+        # result_2 = qa({"query": report})
+        # suggestions_report = result_2['result']
+        # print("\n")
+        # print(f"Your report is:\n{suggestions_report}")
+        # print("\n")
+
         break
