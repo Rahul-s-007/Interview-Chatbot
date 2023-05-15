@@ -37,5 +37,7 @@ streamlit run main.py ## Run the main application
 Your .env file should contain the following variables:
 ```
 OPENAI_API_KEY=<YOUR API KEY>
+PINECONE_API_KEY=<YOUR API KEY>
+PINECONE_ENVIRONMENT_NAME=<YOUR ACCOUNTS REGION>
 ```
 
