@@ -75,9 +75,9 @@ if 'userans' not in st.session_state:
 #----------------------------------------------------------
 
 chat_col,temp = st.columns([10,1])
-col1,col2 = st.columns([1,1])
-text_col, temp = st.columns([10,1])
-report_col,temp = st.columns([10,1])
+col1,space,col2 = st.columns([2,1,1])
+text_col, temp = st.columns([11,1])
+report_col,temp = st.columns([11,1])
 
 #----------------------------------------------------------
 def get_suggestions(qa_pair):
@@ -168,10 +168,18 @@ def chat_customer_service_representative():
 #              "Teacher",
 #              "Web Developer"]
 
-job_roles = ["Customer Service Representative"]
+job_roles = ["Customer Service Representative", 
+             "Human Resources Manager",
+             "Project Manager",
+             "Financial Analyst",
+             "Marketing Manager",
+             "Data Scientist",
+             "Lawyer"]
 
 #----------------------------------------------------------------#
 def main():
+    st.sidebar.image("doc_imgs/ai-chatbot-thumb.webp")
+    
     st.sidebar.write("Choose a role to be interviewed for:")
     options = st.sidebar.radio("Select Role",job_roles,label_visibility="collapsed")
     
@@ -187,8 +195,9 @@ def main():
         st.session_state["question"] = ""
         st.session_state["past"] = []
         st.session_state.userans = ''
-        
+
     st.sidebar.success("Press 'New Question' to start the interview.")
+
 #----------------------------------------------------------------#
 if __name__ == "__main__":
     main()
