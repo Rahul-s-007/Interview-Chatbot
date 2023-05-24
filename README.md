@@ -1,5 +1,5 @@
 # Interview-Chatbot
-
+## Website: [Interview Chatbot](https://interview-chatbot.streamlit.app/)
 ## Revolutionizing the way we interview: AI-powered chatbot for efficient and engaging interviews
 
 - The traditional process of conducting job interviews is time-consuming and requires significant effort from HR teams. Companies are searching for more efficient ways to conduct interviews while still providing a personalized experience for candidates. The solution to this problem is an AI-powered interview chatbot that can conduct interviews in a conversational manner while providing valuable insights to recruiters.
@@ -15,18 +15,17 @@
 ![](doc_imgs/main_page_ss.png)
 
 # Tools:
-
-- VScode
-- LangChain
-- Pinecone
-- Python
-- Streamlit
+- [OpenAI](https://openai.com/)
+- [LangChain](https://python.langchain.com/en/latest/index.html)
+- [Pinecone](https://www.pinecone.io/)
+- [Streamlit](https://streamlit.io/)
+- [Python](https://www.python.org/)
 
 # Large Language Model (LLM):
 
-- text-davinci-003
+- [text-davinci-003](https://platform.openai.com/docs/models/gpt-3-5)
 
-# Getting Started
+# Getting Started:
 After cloning the repository to local machine.
 To run the project locally, run the following CLI commands.
 ```
