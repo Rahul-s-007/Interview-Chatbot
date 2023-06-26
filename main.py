@@ -63,6 +63,8 @@ if "prev_ans" not in st.session_state:
 if "question" not in st.session_state:
     st.session_state["question"] = ""
 
+if "report" not in st.session_state:
+    st.session_state["report"] = """"""
 #----------------------------------------------------------
 if "past" not in st.session_state:
     st.session_state["past"] = []
@@ -119,10 +121,9 @@ def submit():
     st.session_state["question_answer_pair"].append([st.session_state["question"], st.session_state["userans"]])
     st.session_state["past"].append(st.session_state["userans"])
     st.session_state["suggestions"].append(get_suggestions(st.session_state["question_answer_pair"][-1]))
-    with open("report.txt", "w") as f:
-        for i in range(len(st.session_state["suggestions"])):
-            f.write(f"Q.{i+1} {st.session_state['question_answer_pair'][i][0]} \n\nAns: {st.session_state['question_answer_pair'][i][1]} \n\nAnalysis:\n{st.session_state['suggestions'][i]}\n\n")
-
+    st.session_state["report"] = """"""
+    for i in range(len(st.session_state["suggestions"])):
+        st.session_state["report"] += f"Q.{i+1} {st.session_state['question_answer_pair'][i][0]} \n\nAns: {st.session_state['question_answer_pair'][i][1]} \n\nAnalysis:\n{st.session_state['suggestions'][i]}\n\n"
     # with a_col:
     #     st.write(st.session_state.userans)
 
@@ -133,9 +134,9 @@ def next_question():
         st.session_state["question_answer_pair"].append([st.session_state["question"], "No answer."])
         st.session_state["past"].append("No answer.")
         st.session_state["suggestions"].append(get_suggestions([st.session_state["question"], "No answer."]))
-        with open("report.txt", "w") as f:
-            for i in range(len(st.session_state["suggestions"])):
-                f.write(f"Q.{i+1} {st.session_state['question_answer_pair'][i][0]} \n\nAns: {st.session_state['question_answer_pair'][i][1]} \n\nAnalysis:\n{st.session_state['suggestions'][i]}\n\n")
+        st.session_state["report"] = """"""
+        for i in range(len(st.session_state["suggestions"])):
+            st.session_state["report"] += f"Q.{i+1} {st.session_state['question_answer_pair'][i][0]} \n\nAns: {st.session_state['question_answer_pair'][i][1]} \n\nAnalysis:\n{st.session_state['suggestions'][i]}\n\n"
 
     query_template = f"""
 Do one of the following:
@@ -240,8 +241,8 @@ def main():
         st.session_state["past"] = []
         st.session_state.userans = ""
 
-    with open("report.txt") as f:
-        st.sidebar.download_button("Download Report", f)
+    if st.sidebar.download_button("Download Report", st.session_state["report"], file_name="report.txt"):
+        st.sidebar.success("Report downloaded successfully.")
 
     st.sidebar.success("Press 'New Question' to start the interview.")
     
