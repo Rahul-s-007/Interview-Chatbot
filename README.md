@@ -16,8 +16,8 @@
 
 # Tools:
 - [OpenAI](https://openai.com/)
-- [LangChain](https://python.langchain.com/en/latest/index.html)
 - [Pinecone](https://www.pinecone.io/)
+- [LangChain](https://python.langchain.com/en/latest/index.html)
 - [Streamlit](https://streamlit.io/)
 - [Python](https://www.python.org/)
 
